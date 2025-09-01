@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefa - Sistema de Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav class="menu-navegacao">
+                <ul>
+                    <li><a href="/page/dashboard.html">Minhas Tarefas</a></li>
+                    <li><a href="/page/criar-tarefa.html">Criar Tarefa</a></li>
+                    <li><a href="#configuracoes">Configurações</a></li>
+                    <li><a href="/index.html">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo-principal">
+            <header class="cabecalho-dashboard">
+                <h1>Editar Tarefa</h1>
+                <a href="/page/dashboard.html" class="botao-cancelar-edicao">Voltar</a>
+            </header>
+
+            <div class="formulario-container">
+                <form class="formulario-tarefa">
+                    <div class="campo-formulario">
+                        <label for="titulo-tarefa-edicao">Título da Tarefa</label>
+                        <input type="text" id="titulo-tarefa-edicao" value="Revisar proposta do cliente">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="descricao-tarefa-edicao">Descrição</label>
+                        <textarea id="descricao-tarefa-edicao"
+                            rows="5">Verificar os valores e o escopo do projeto antes de enviar para o cliente. Focar na cláusula 5.3 sobre prazos de entrega.</textarea>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="status-tarefa">Status</label>
+                        <select id="status-tarefa">
+                            <option value="pendente" selected>Pendente</option>
+                            <option value="em-andamento">Em Andamento</option>
+                            <option value="concluida">Concluída</option>
+                        </select>
+                    </div>
+
+                    <div class="acoes-formulario">
+                        <a href="/page/dashboard.html" class="botao-salvar-alteracoes">Salvar Alterações</a>
+                        <button type="button" class="botao-excluir-tarefa">Excluir Tarefa</button>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="rodape-dashboard">
+                <p>&copy; 2025 Projeto Acadêmico</p>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

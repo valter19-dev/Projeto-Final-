@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Nova Tarefa - Sistema de Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav class="menu-navegacao">
+                <ul>
+                    <li><a href="/page/dashboard.html">Minhas Tarefas</a></li>
+                    <li><a href="/page/criar-tarefa.html" class="ativo">Criar Tarefa</a></li>
+                    <li><a href="#configuracoes">Configurações</a></li>
+                    <li><a href="/index.html">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo-principal">
+            <header class="cabecalho-dashboard">
+                <h1>Criar Nova Tarefa</h1>
+            </header>
+
+            <div class="formulario-container">
+                <form class="formulario-tarefa">
+                    <div class="campo-formulario">
+                        <label for="titulo-tarefa">Título da Tarefa</label>
+                        <input type="text" id="titulo-tarefa" placeholder="Ex: Fazer compras da semana">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="descricao-tarefa">Descrição (Opcional)</label>
+                        <textarea id="descricao-tarefa" rows="5" placeholder="Descreva mais a tarefa..."></textarea>
+                    </div>
+
+                    <div class="acoes-formulario">
+                        <a href="/page/dashboard.html" class="botao-salvar-tarefa">Salvar Tarefa</a>
+                        <a href="/page/dashboard.html" class="botao-cancelar">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="rodape-dashboard">
+                <p>&copy; 2025 Projeto Acadêmico</p>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
