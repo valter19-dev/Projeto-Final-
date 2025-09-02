@@ -642,6 +642,21 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
     }
+
+    .botao-salvar,
+    .botao-salvar-alteracoes,
+    .botao-salvar-tarefa {
+        width: 94%;
+    }
+
+    .botao-cancelar,
+    .botao-editar-tarefa {
+        width: 94%;
+    }
+
+    .botao-excluir-tarefa {
+        width: 100%;
+    }
 }
 
 @media (max-width: 500px) {
