@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sistema de Gerenciamento de Tarefas</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../theme.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body class="dashboard-body">
+
+
     <div class="dashboard-container">
         <aside class="sidebar">
             <h2>Dashboard</h2>
@@ -27,6 +30,12 @@
             <header class="cabecalho-dashboard">
                 <h1>Minhas Tarefas</h1>
                 <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova Tarefa</a>
+                <div> <!-- Botão de alternância de tema -->
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="icon">🌙</span>
+                        <span class="text">Escuro</span>
+                    </button>
+                </div>
             </header>
 
             <div class="grade-tarefas">
@@ -132,6 +141,50 @@
             </footer>
         </main>
     </div>
+
+    <script>
+        // Sistema de alternância de tema
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('.icon');
+        const text = themeToggle.querySelector('.text');
+
+        // Verificar tema salvo no localStorage
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+
+        // Aplicar tema inicial
+        if (savedTheme === 'light') {
+            body.setAttribute('data-theme', 'light');
+            icon.textContent = '☀️';
+            text.textContent = 'Claro';
+        } else {
+            body.removeAttribute('data-theme');
+            icon.textContent = '🌙';
+            text.textContent = 'Escuro';
+        }
+
+        // Função para alternar tema
+        function toggleTheme() {
+            const currentTheme = body.getAttribute('data-theme');
+
+            if (currentTheme === 'light') {
+                // Mudar para tema escuro
+                body.removeAttribute('data-theme');
+                icon.textContent = '🌙';
+                text.textContent = 'Escuro';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Mudar para tema claro
+                body.setAttribute('data-theme', 'light');
+                icon.textContent = '☀️';
+                text.textContent = 'Claro';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Adicionar evento de clique
+        themeToggle.addEventListener('click', toggleTheme);
+    </script>
 </body>
 
 </html>
