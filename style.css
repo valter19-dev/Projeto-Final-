@@ -256,11 +256,11 @@ p a:hover {
     background-color: var(--cor-primaria-hover);
 }
 
-.botao-concluir,
+
 .botao-salvar-tarefa,
 .botao-salvar-alteracoes {
     display: inline-block;
-    width: 40%;
+    width: 31vh;
     background-color: var(--cor-sucesso);
     color: white;
     padding: 10px;
@@ -274,7 +274,6 @@ p a:hover {
     transition: background 0.3s;
 }
 
-.botao-concluir:hover,
 .botao-salvar-tarefa:hover,
 .botao-salvar-alteracoes:hover {
     background-color: #095e1b;
@@ -300,9 +299,29 @@ p a:hover {
     background-color: var(--cor-secondary-hover);
 }
 
-.botao-editar-tarefa {
+.botao-concluir {
     display: inline-block;
     width: 40%;
+    background-color: var(--cor-sucesso);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.botao-concluir:hover {
+    background-color: #095e1b;
+}
+
+.botao-editar-tarefa {
+    display: inline-block;
+    width: 31vh;
     background-color: var(--cor-secondary);
     color: white;
     padding: 10px;
@@ -322,7 +341,7 @@ p a:hover {
 
 .botao-excluir-tarefa {
     display: inline-block;
-    width: 40%;
+    width: 34vh;
     background-color: var(--cor-perigo);
     color: white;
     padding: 10px;
@@ -342,7 +361,7 @@ p a:hover {
 
 .botao-cancelar {
     display: inline-block;
-    width: 40%;
+    width: 31vh;
     background-color: var(--cor-perigo);
     color: white;
     padding: 10px;
@@ -501,6 +520,7 @@ p a:hover {
     display: flex;
     gap: 15px;
     margin-top: 30px;
+    justify-content: space-between;
 }
 
 
@@ -558,6 +578,7 @@ p a:hover {
     display: flex;
     gap: 15px;
     margin-top: 30px;
+    justify-content: space-between;
 }
 
 
@@ -614,10 +635,12 @@ footer a:hover {
 
     .acoes-formulario {
         flex-direction: column;
+        align-items: center;
     }
 
     .acoes-detalhes {
         flex-direction: column;
+        align-items: center;
     }
 }
 
