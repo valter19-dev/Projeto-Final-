@@ -8,28 +8,46 @@ Projetar e construir a `interface visual estática` para todas as telas necessá
 **Estrutura de diretórios:** 
 
 / 
-|-- page/ 
+
+|-- page/
+
 |   |-- criar-tarefa.html 
+
 |   |-- dashboard.html 
+
 |   |-- detalhes-tarefa.html 
+
 |   |-- editar-tarefa.html 
+
 |   |-- login.html 
+
 |-- index.html 
+
 |-- README.md 
+
 |-- style.css 
+
 |-- theme.js 
 
  **Mapa do site / páginas previstas:**  
 
 Cadastro - Home (index.html) 
+
 │ 
+
 ├── Login (login.html) 
+
 │ 
+
 └── Dashboard (dashboard.html) 
+
     │ 
     ├── Criar Tarefa (criar-tarefa.html) 
+
     ├── Editar Tarefa (editar-tarefa.html) 
+
     └── Detalhes da Tarefa (detalhes-tarefa.html) 
+    
 
 
 ### ✨ Funcionalidades
