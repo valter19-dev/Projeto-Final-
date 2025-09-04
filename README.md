@@ -3,50 +3,6 @@
 ## Objetivo 
 Projetar e construir a `interface visual estática` para todas as telas necessárias do sistema, incluindo o fluxo de autenticação (cadastro e login).
 
-## Arquitetura de Informação e Páginas 
-
-**Estrutura de diretórios:** 
-
-/ 
-
-|-- page/
-
-|   |-- criar-tarefa.html 
-
-|   |-- dashboard.html 
-
-|   |-- detalhes-tarefa.html 
-
-|   |-- editar-tarefa.html 
-
-|   |-- login.html 
-
-|-- index.html 
-
-|-- README.md 
-
-|-- style.css 
-
-|-- theme.js 
-
- **Mapa do site**  
-
-Cadastro - Home (index.html) 
-
-│ 
-
-├── Login (login.html) 
-
-│ 
-
-└── Dashboard (dashboard.html) 
-
-    │ 
-    ├── Criar Tarefa (criar-tarefa.html) 
-
-    ├── Editar Tarefa (editar-tarefa.html) 
-
-    └── Detalhes da Tarefa (detalhes-tarefa.html) 
 
 
 
@@ -117,6 +73,50 @@ O layout foi desenvolvido com design responsivo usando apenas CSS, funcionando p
 - **Performance**: Código leve, rápido e sem dependências externas.  
 - **Manutenibilidade**: Estrutura organizada e fácil de atualizar ou expandir.
 
+## Arquitetura de Informação e Páginas 
+
+**Estrutura de diretórios:** 
+
+/ 
+
+|-- page/
+
+|   |-- criar-tarefa.html 
+
+|   |-- dashboard.html 
+
+|   |-- detalhes-tarefa.html 
+
+|   |-- editar-tarefa.html 
+
+|   |-- login.html 
+
+|-- index.html 
+
+|-- README.md 
+
+|-- style.css 
+
+|-- theme.js 
+
+ **Mapa do site**  
+
+Cadastro - Home (index.html) 
+
+│ 
+
+├── Login (login.html) 
+
+│ 
+
+└── Dashboard (dashboard.html) 
+
+    │ 
+    ├── Criar Tarefa (criar-tarefa.html) 
+
+    ├── Editar Tarefa (editar-tarefa.html) 
+
+    └── Detalhes da Tarefa (detalhes-tarefa.html) 
 ---
 
 **Desenvolvido com foco na experiência do usuário e boas práticas de desenvolvimento web, alinhado às recomendações da WCAG e W3C.**
