@@ -29,7 +29,7 @@ Projetar e construir a `interface visual estática` para todas as telas necessá
 
 |-- theme.js 
 
- **Mapa do site / páginas previstas:**  
+ **Mapa do site**  
 
 Cadastro - Home (index.html) 
 
@@ -47,7 +47,7 @@ Cadastro - Home (index.html)
     ├── Editar Tarefa (editar-tarefa.html) 
 
     └── Detalhes da Tarefa (detalhes-tarefa.html) 
-    
+
 
 
 ### ✨ Funcionalidades
