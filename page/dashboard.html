@@ -8,33 +8,40 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../theme.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--Icones do olho e do painel-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!--Icones do git-->
+
 </head>
 
 <body class="dashboard-body">
+    <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+
 
 
     <div class="dashboard-container">
         <aside class="sidebar">
-            <h2>Painel <i class="bi bi-speedometer2"></i></h2>
+            <h1>Painel <i class="bi bi-speedometer2"></i></h1>
             <nav class="menu-navegacao">
                 <ul>
                     <li><a href="./dashboard.html" class="ativo">Minhas Tarefas</a></li>
                     <li><a href="./criar-tarefa.html">Criar Tarefa</a></li>
-                    <li><a href="#configuracoes">Configurações</a></li>
+                    <a id="themeToggle">
+                        <span class="text">Modo Claro</span>
+                        <span class="icon">🌙</span>
+                    </a>
                     <li><a href="../index.html">Sair</a></li>
+
                 </ul>
             </nav>
         </aside>
 
-        <main class="conteudo-principal">
+        <main class="conteudo-principal" id="conteudo-principal">
             <header class="cabecalho-dashboard">
-                <h1>Minhas Tarefas</h1>
+                <h2>Minhas Tarefas</h2>
                 <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova Tarefa</a>
                 <!-- Botão de alternância de tema -->
-                <a class="theme-toggle" id="themeToggle">
-                    <span class="icon">🌙</span>
-                    <span class="text">Escuro</span>
-                </a>
+
 
             </header>
 
@@ -136,8 +143,18 @@
                 </div>
             </div>
 
-            <footer class="rodape-dashboard">
-                <p>&copy; 2025 Projeto Acadêmico</p>
+            <footer class="rodape">
+                <p>&copy; 2025 Projeto Acadêmico Valter </p>
+                <div class="footer-links">
+                    <a href="https://github.com/valter19-dev/Projeto-Final-" target="_blank"
+                        aria-label="Repositório no GitHub">
+                        <i class="fab fa-github"> Repositorio</i>
+                    </a>
+                    <a href="https://valter19-dev.github.io/Projeto-Final-/index.html" target="_blank"
+                        aria-label="Projeto Hospedado">
+                        <i class="fas fa-external-link-alt"> Projeto hospedado</i>
+                    </a>
+                </div>
             </footer>
         </main>
     </div>
@@ -155,12 +172,13 @@
         // Aplicar tema inicial
         if (savedTheme === 'light') {
             body.setAttribute('data-theme', 'light');
-            icon.textContent = '☀️';
-            text.textContent = 'Claro';
+            text.textContent = 'Modo Escuro';
+            icon.textContent = '🌙';
         } else {
             body.removeAttribute('data-theme');
-            icon.textContent = '🌙';
-            text.textContent = 'Escuro';
+            text.textContent = 'Modo Claro';
+            icon.textContent = '☀️';
+
         }
 
         // Função para alternar tema
@@ -170,14 +188,15 @@
             if (currentTheme === 'light') {
                 // Mudar para tema escuro
                 body.removeAttribute('data-theme');
-                icon.textContent = '🌙';
-                text.textContent = 'Escuro';
+
+                text.textContent = 'Modo Claro';
+                icon.textContent = '☀️';
                 localStorage.setItem('theme', 'dark');
             } else {
                 // Mudar para tema claro
                 body.setAttribute('data-theme', 'light');
-                icon.textContent = '☀️';
-                text.textContent = 'Claro';
+                text.textContent = 'Modo Escuro';
+                icon.textContent = '🌙';
                 localStorage.setItem('theme', 'light');
             }
         }

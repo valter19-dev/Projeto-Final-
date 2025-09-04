@@ -61,36 +61,6 @@
     --sombra-form: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botão de alternância de tema */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--cor-cartao);
-    border: 2px solid var(--cor-borda);
-    border-radius: 50px;
-    padding: 8px 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--texto-principal);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: var(--sombra-cartao);
-}
-
-.theme-toggle:hover {
-    background-color: var(--cor-primaria);
-    color: white;
-    transform: scale(1.05);
-}
-
-.theme-toggle .icon {
-    font-size: 16px;
-}
-
 /* Estilos base */
 body {
     font-family: Arial, sans-serif;
@@ -109,6 +79,8 @@ body {
     text-align: center;
     padding: 20px;
 }
+
+
 
 h1 {
     color: var(--texto-principal);
@@ -180,74 +152,7 @@ form button:hover {
     background-color: var(--cor-sucesso-hover);
 }
 
-.botao-salvar {
-    display: inline-block;
-    width: 92%;
-    background-color: var(--cor-primaria);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background 0.3s;
-}
 
-.botao-salvar:hover {
-    background-color: var(--cor-primaria-hover);
-}
-
-.botao-entrar {
-    display: inline-block;
-    width: 92%;
-    background-color: var(--cor-primaria);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background 0.3s;
-}
-
-.botao-entrar:hover {
-    background-color: var(--cor-primaria-hover);
-}
-
-p {
-    margin-top: 20px;
-    color: var(--texto-secundario);
-}
-
-p a {
-    color: var(--cor-link);
-    text-decoration: none;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    .form-container {
-        margin: 20px auto;
-        width: calc(100% - 40px);
-    }
-
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-}
 
 /* Estilos do Dashboard */
 .dashboard-body {
@@ -265,6 +170,7 @@ p a:hover {
     width: 100%;
 }
 
+/* Estilos do Menu de navegação e Sidebar*/
 .sidebar {
     background-color: var(--cor-sidebar);
     width: 250px;
@@ -274,12 +180,13 @@ p a:hover {
     transition: all 0.3s ease;
 }
 
-.sidebar h2 {
+.sidebar h1 {
     color: var(--texto-principal);
     margin-bottom: 30px;
     font-size: 1.9rem;
     font-weight: bold;
     border-left: 2px solid var(--cor-perigo-hover);
+    border-radius: 8px;
     padding: 8px;
 }
 
@@ -299,7 +206,7 @@ p a:hover {
     text-decoration: none;
     padding: 10px 15px;
     display: block;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
@@ -307,6 +214,7 @@ p a:hover {
 .menu-navegacao a.ativo {
     background-color: var(--cor-borda);
     color: var(--texto-principal);
+    border-right: 1px solid var(--cor-perigo-hover);
 }
 
 .conteudo-principal {
@@ -318,7 +226,7 @@ p a:hover {
 
 .cabecalho-dashboard {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
@@ -330,6 +238,8 @@ p a:hover {
     border-radius: 6px;
     padding: 8px;
 }
+
+/*Estilização global para todos os botões - página === TODAS ===*/
 
 .botao-nova-tarefa,
 .botao-voltar-lista,
@@ -374,6 +284,7 @@ p a:hover {
     background-color: var(--cor-sucesso-hover);
 }
 
+/*Botão editar do card*/
 .botao-editar {
     display: inline-block;
     width: 40%;
@@ -474,9 +385,68 @@ p a:hover {
     background-color: var(--cor-perigo-hover);
 }
 
+/*Estilo para os Botões da tela login e cadastro - página === LOGIN E CADASTRO ===*/
+
+.botao-salvar {
+    display: inline-block;
+    width: 92%;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.botao-salvar:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.botao-entrar {
+    display: inline-block;
+    width: 92%;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.botao-entrar:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+p {
+    margin-top: 20px;
+    color: var(--texto-secundario);
+}
+
+p a {
+    color: var(--cor-link);
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+/*Estilos para Cards página === DASHBOARD ===*/
+
 .grade-tarefas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -491,6 +461,7 @@ p a:hover {
 .cartao-tarefa:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-right: 1px solid var(--cor-secondary-hover);
 }
 
 .cartao-tarefa,
@@ -512,7 +483,7 @@ p a:hover {
     margin: 0;
 }
 
-/* Ícone do olho */
+/* Estilos para o ícone do olho dos cards  */
 .icone-olho {
     font-size: 1.8rem;
     color: var(--texto-principal);
@@ -558,7 +529,7 @@ p a:hover {
     text-align: center;
 }
 
-/* Estilos para Detalhes da Tarefa */
+/* Estilos para Detalhes da Tarefa - página === DETALHES-TAREFA === */
 .detalhes-container {
     max-width: 800px;
 }
@@ -631,7 +602,7 @@ p a:hover {
     justify-content: space-between;
 }
 
-/* Estilos para Formulários */
+/* Estilos de Formulários para as páginas === EDITAR-TAREFA E CRIAR-TAREFA === */
 .formulario-container {
     max-width: 600px;
 }
@@ -699,24 +670,32 @@ p a:hover {
     justify-content: space-between;
 }
 
-/* Footer */
-footer {
-    margin-top: 40px;
+/* Estilização global para os  rodapés de todas as paginas */
+.rodape {
+    margin-top: auto;
+    padding: 15px 20px;
     text-align: center;
     color: var(--texto-secundario);
     font-size: 14px;
 }
 
-footer a {
-    color: var(--cor-link);
-    text-decoration: none;
+.footer-links {
+    margin-top: 8px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.footer-links a {
+    margin: 0 8px;
+    color: var(--texto-principal);
+    font-size: 9pt;
+    transition: color 0.3s ease;
 }
 
-/* Responsividade para Dashboard */
+.footer-links a:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* Responsividade do Dashboard com Media Query para telas médias (Tablets)  */
 @media (max-width: 768px) {
     .dashboard-container {
         flex-direction: column;
@@ -776,9 +755,16 @@ footer a:hover {
     }
 }
 
+/*Responsividade com Media Query para tela menores (Celular)*/
+
 @media (max-width: 500px) {
     .conteudo-principal {
         padding: 15px;
+    }
+
+    .botao-cancelar,
+    .botao-editar-tarefa {
+        width: 93%;
     }
 
     .menu-navegacao ul {
@@ -793,4 +779,49 @@ footer a:hover {
     .formulario-tarefa {
         padding: 20px;
     }
+}
+
+/*Animação do incone do painel*/
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: var(--texto-principal);
+    }
+
+    50% {
+        transform: scale(1.3);
+        color: var(--cor-primaria);
+    }
+
+    100% {
+        transform: scale(1);
+        color: var(--texto-principal);
+    }
+}
+
+.sidebar h1 i {
+    animation: pulse 1.8s infinite;
+}
+
+
+/*skip Link*/
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    /* escondido fora da tela */
+    left: 0;
+    background: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    z-index: 1000;
+    text-decoration: none;
+    transition: top 0.3s;
+}
+
+/* Quando recebe foco pelo teclado, aparece */
+.skip-link:focus {
+    top: 10px;
 }
