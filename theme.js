@@ -1,3 +1,4 @@
+
 // Sistema de alternância de tema global
 (function() {
     // Função para aplicar tema
