@@ -8,11 +8,15 @@ Projetar e construir a `interface visual estática` para todas as telas necessá
 
 ### ✨ Funcionalidades
 
-- **Alternância de Tema**: Botão no menu de navegação do dashboard para alternar entre modo escuro e claro
-- **Persistência**: O tema escolhido é salvo no localStorage do navegador e mantido entre sessões
-- **Aplicação Global**: O tema é aplicado automaticamente em todas as páginas do projeto
-- **Transições Suaves e Pulse**: Animações CSS para uma experiência visual agradável
-- **Design Responsivo**: Todo o sistema funciona em dispositivos desktop e mobile
+- **Gerenciamento de Tarefas**: Criar, editar, excluir e visualizar tarefas de forma prática.  
+- **Detalhamento de Tarefas**: Cada tarefa pode conter título, descrição e informações adicionais.  
+- **Dashboard Interativo**: Visualização centralizada de todas as tarefas em andamento.  
+- **Organização Simples**: Interface intuitiva para manter as tarefas organizadas.  
+- **Autonomia do Usuário**: Possibilidade de editar ou remover tarefas conforme a necessidade.  
+- **Design Responsivo**: Sistema adaptado para desktops, tablets e smartphones.  
+- **Tema Claro/Escuro**: Alternância de tema para melhor conforto visual.  
+- **Persistência de Preferências**: Tema escolhido salvo no navegador entre sessões.  
+- **Transições Suaves**: Animações aplicadas para uma experiência mais agradável.  
 
 ## 🌙 Sistema de Temas Implementado
 
