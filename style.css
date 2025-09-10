@@ -17,10 +17,10 @@
     /* Ações */
     --cor-primaria: #1a1aaf;
     --cor-primaria-hover: #1a4195;
-    --cor-secondary: #4244c1;
-    --cor-secondary-hover: #5223a2;
-    --cor-sucesso: #06a72e;
-    --cor-sucesso-hover: #098b0f;
+    --cor-secondary: #2c2ebf;
+    --cor-secondary-hover: #03389a;
+    --cor-sucesso: #198754;
+    --cor-sucesso-hover: #1b553a;
     --cor-perigo: #b7051f;
     --cor-perigo-hover: #a01624;
     --cor-link: #0ea5e9;
@@ -48,11 +48,11 @@
     /* Ações */
     --cor-primaria: #1a1aaf;
     --cor-primaria-hover: #1a4195;
-    --cor-secondary: #6366f1;
-    --cor-secondary-hover: #4f46e5;
-    --cor-sucesso: #0F6230;
-    --cor-sucesso-hover: #1e723e;
-    --cor-perigo: #AE0909;
+    --cor-secondary: #2c2ebf;
+    --cor-secondary-hover: #03389a;
+    --cor-sucesso: #198754;
+    --cor-sucesso-hover: #1b553a;
+    --cor-perigo: #dc3545;
     --cor-perigo-hover: #dc2626;
     --cor-link: #0ea5e9;
 
@@ -149,7 +149,7 @@ form button {
 }
 
 form button:hover {
-    background-color: var(--cor-sucesso-hover);
+    background-color: var(--cor-primaria-hover);
 }
 
 
@@ -747,7 +747,7 @@ p a:hover {
 
     .botao-cancelar,
     .botao-editar-tarefa {
-        width: 94%;
+        width: 100%;
     }
 
     .botao-excluir-tarefa {
