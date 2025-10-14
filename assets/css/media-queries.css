@@ -1,0 +1,119 @@
+/* Responsividade do Dashboard com Media Query para telas médias (Tablets)  */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 2rem;
+        height: 100vh;
+        width: 250px;
+        background: var(--cor-sidebar);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .conteudo-principal {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    /* Deixa o conteúdo invisível atrás do menu */
+    .dashboard-container {
+        padding-top: 4rem;
+    }
+
+    .menu-navegacao ul {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        gap: 10px;
+    }
+
+    .menu-navegacao li {
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    .cabecalho-dashboard {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .grade-tarefas {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acoes-detalhes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botao-salvar,
+    .botao-salvar-alteracoes,
+    .botao-salvar-tarefa {
+        width: 100%;
+    }
+
+    .botao-cancelar,
+    .botao-editar-tarefa {
+        width: 100%;
+    }
+
+    .botao-excluir-tarefa {
+        width: 100%;
+    }
+}
+
+/*Responsividade com Media Query para tela menores (Celular)*/
+
+@media (max-width: 500px) {
+    .conteudo-principal {
+        padding: 15px;
+    }
+
+    .botao-cancelar,
+    .botao-editar-tarefa {
+        width: 93%;
+    }
+
+    .menu-navegacao ul {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        gap: 10px;
+    }
+
+    .cartao-tarefa,
+    .cartao-detalhes,
+    .formulario-tarefa {
+        padding: 20px;
+    }
+}

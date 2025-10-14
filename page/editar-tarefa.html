@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Tarefa - Sistema de Gerenciamento de Tarefas</title>
     <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/media-queries.css">
+    <link rel="stylesheet" href="../assets/css/landing-page.css">
     <script src="../assets/js/theme.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!--Icones do git-->
@@ -15,9 +18,34 @@
 <body class="dashboard-body">
     <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>TaskFlow</span>
+                </div>
+                <div class="nav-actions">
+                    <button aria-label="tema" id="themeToggle" class="theme-toggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <!-- Botão de menu (só aparece no mobile) -->
+                    <button class="menu-toggle" id="menuToggle">
+                        ☰
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
     <div class="dashboard-container">
         <aside class="sidebar">
-            <h1>Painel</h1>
+            <div class="logo">
+                <i class="bi bi-speedometer2"></i>
+                <span>TaskFlow</span>
+            </div>
             <nav class="menu-navegacao">
                 <ul>
                     <li><a href="./dashboard.html">Minhas Tarefas</a></li>
@@ -28,10 +56,10 @@
         </aside>
 
         <main class="conteudo-principal" id="conteudo-principal">
-            <header class="cabecalho-dashboard">
+            <div class="cabecalho-dashboard">
                 <h2>Editar Tarefa</h2>
                 <a href="./dashboard.html" class="botao-cancelar-edicao">Voltar</a>
-            </header>
+            </div>
 
             <div class="formulario-container">
                 <form class="formulario-tarefa" action="./dashboard.html">
@@ -61,22 +89,9 @@
                     </div>
                 </form>
             </div>
-
-            <footer class="rodape">
-                <p>&copy; 2025 Projeto Acadêmico Valter </p>
-                <div class="footer-links">
-                    <a href="https://github.com/valter19-dev/Projeto-Final-" target="_blank" rel="noopener"
-                        aria-label="Repositório no GitHub">
-                        <i class="fab fa-github"> Repositorio</i>
-                    </a>
-                    <a href="https://valter19-dev.github.io/Projeto-Final-/index.html" target="_blank" rel="noopener"
-                        aria-label="Projeto Hospedado">
-                        <i class="fas fa-external-link-alt"> Projeto hospedado</i>
-                    </a>
-                </div>
-            </footer>
         </main>
     </div>
+    <script src="../assets/js/editar-tarefa.js"></script>
 </body>
 
 </html>
