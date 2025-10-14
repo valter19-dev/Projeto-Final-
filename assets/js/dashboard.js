@@ -10,7 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     listaTarefas.innerHTML = "";
 
     if (tarefas.length === 0) {
-      listaTarefas.innerHTML = `<p class="sem-tarefas">Nenhuma tarefa cadastrada ainda.</p>`;
+      listaTarefas.innerHTML = `
+    <div class="sem-tarefas-container">
+      <p class="sem-tarefas">Nenhuma tarefa cadastrada ainda.</p>
+      <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova Tarefa</a>
+    </div>
+  `;
       return;
     }
 

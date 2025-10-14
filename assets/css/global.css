@@ -115,7 +115,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
-    width: 100%;
+    width: -webkit-fill-available;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid var(--cor-input-borda);
@@ -215,15 +215,19 @@ form button:hover {
     padding: 0.75rem 1rem;
     border-radius: 6px;
     transition: all .3s ease;
-    color: var(--texto-secundario);
+    color: var(--texto-principal);
     text-decoration: none;
 }
 
 .menu-navegacao a:hover,
 .menu-navegacao a.ativo {
-    background-color: var(--cor-borda);
+    background-color: rgba(112, 178, 187, 0.923);
     color: var(--texto-principal);
-    border-right: 1px solid var(--texto-secundario)
+    font-size: 1.1rem;
+}
+
+.icones {
+    font-size: 1.5rem;
 }
 
 .conteudo-principal {
@@ -253,7 +257,6 @@ form button:hover {
 
 /*Estilização global para todos os botões - página === TODAS ===*/
 
-.botao-nova-tarefa,
 .botao-voltar-lista,
 .botao-cancelar-edicao {
     background-color: var(--cor-primaria);
@@ -493,15 +496,14 @@ p a:hover {
 .cartao-tarefa {
     padding: 20px;
     border-radius: 8px;
-    box-shadow: var(--sombra-cartao);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
     transition: all 0.3s ease;
 }
 
-.cartao-tarefa:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-right: 1px solid var(--cor-secondary-hover);
-}
 
 .cartao-tarefa,
 .cartao-detalhes,
@@ -738,18 +740,18 @@ p a:hover {
     display: none;
     /* só aparece no mobile */
     z-index: 1001;
-    background: var(--cor-neon, #00ffff);
+    background: none;
     border: none;
-    color: #000;
+    color: var(--texto-principal);
     padding: 0.7rem 1rem;
-    font-size: 1.5rem;
+    font-size: 20px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .menu-toggle:hover {
-    background: #0ff;
+    font-weight: bold;
     transform: scale(1.05);
 }
 

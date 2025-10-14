@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sistema de Gerenciamento de Tarefas</title>
     <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/criar-tarefa.css">
     <link rel="stylesheet" href="../assets/css/media-queries.css">
     <link rel="stylesheet" href="../assets/css/landing-page.css">
     <script src="../assets/js/theme.js"></script>
@@ -26,13 +27,18 @@
                     <i class="bi bi-speedometer2"></i>
                     <span>TaskFlow</span>
                 </div>
+
                 <div class="nav-actions">
                     <button id="themeToggle" class="theme-toggle">
                         <span class="icon">🌙</span>
                     </button>
-                    <!-- <button aria-label="tema" id="themeToggle" class="theme-toggle">
-                        <span class="theme-icon">🌙</span>
-                    </button> -->
+
+                    <div class="header-user">
+                        <span>Usuário</span>
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
                     <!-- Botão de menu (só aparece no mobile) -->
                     <button class="menu-toggle" id="menuToggle">
                         ☰
@@ -56,26 +62,26 @@
             <nav class="menu-navegacao">
 
                 <ul>
-                    <li> <a href="../page/dashboard.html" class="active">
-                            <i class="bi bi-grid-1x2-fill"></i>
+                    <li><a href="../page/dashboard.html" class="active">
+                            <span class="icones"><i class="bi bi-grid-1x2-fill"></i></span>
 
                             <h3>Dashboard</h3>
                         </a></li>
                     <li> <a href="../page/criar-tarefa.html">
-                            <i class="bi bi-plus-lg"></i></i>
+                            <span class="icones"> <i class="bi bi-plus-lg"></i></span>
 
                             <h3>Nova Tarefa</h3>
                         </a></li>
 
                     <li><a href="../page/criar-tarefa.html">
-                            <i class="bi bi-gear-fill"></i>
+                            <span class="icones"><i class="bi bi-gear-fill"></i></span>
 
                             <h3>Configurações</h3>
                         </a></li>
 
                     <li><a href="../index.html">
-                            <i class="bi bi-box-arrow-left"></i>
-
+                            <span class="icones"><i class="bi bi-box-arrow-left"></i>
+                            </span>
                             <h3>Sair</h3>
                         </a></li>
 
@@ -84,13 +90,6 @@
         </aside>
 
         <main class="conteudo-principal" id="conteudo-principal">
-            <div class="cabecalho-dashboard">
-                <h2>Minhas Tarefas</h2>
-                <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova Tarefa</a>
-
-
-            </div>
-
             <div class="grade-tarefas">
 
                 <div id="listaTarefas" class="tarefas-container"></div>
@@ -112,20 +111,6 @@
                     </div>
                 </div> -->
             </div>
-
-            <footer class="rodape">
-                <p>&copy; 2025 Projeto Acadêmico Valter </p>
-                <div class="footer-links">
-                    <a href="https://github.com/valter19-dev/Projeto-Final-" target="_blank" rel="noopener"
-                        aria-label="Repositório no GitHub">
-                        <i class="fab fa-github"> Repositorio</i>
-                    </a>
-                    <a href="https://valter19-dev.github.io/Projeto-Final-/index.html" target="_blank" rel="noopener"
-                        aria-label="Projeto Hospedado">
-                        <i class="fas fa-external-link-alt"> Projeto hospedado</i>
-                    </a>
-                </div>
-            </footer>
         </main>
     </div>
 

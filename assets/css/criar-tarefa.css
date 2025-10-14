@@ -1,3 +1,66 @@
+/* Sistema de Temas - Variáveis CSS */
+:root {
+    /* Tema Escuro (padrão) */
+    --cor-fundo: #0f0f1a;
+    --cor-sidebar: #161624;
+    --cor-cartao: #1e1e2f;
+    --cor-borda: #2a2a3d;
+    --cor-input: #3a3a5a;
+    --cor-input-borda: #4a4a6a;
+
+    /* Texto */
+    --texto-principal: #f5f5f5;
+    --texto-secundario: #9ca3af;
+    --texto-placeholder: #dad3d3;
+    --texto-label: #efe3e3;
+
+    /* Ações */
+    --cor-primaria: #1a1aaf;
+    --cor-primaria-hover: #1a4195;
+    --cor-secondary: #2c2ebf;
+    --cor-secondary-hover: #03389a;
+    --cor-sucesso: #198754;
+    --cor-sucesso-hover: #1b553a;
+    --cor-perigo: #b7051f;
+    --cor-perigo-hover: #a01624;
+    --cor-link: #0ea5e9;
+
+    /* Sombras */
+    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --sombra-form: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+    --cor-fundo: #f8fafc;
+    --cor-sidebar: #ffffff;
+    --cor-cartao: #ffffff;
+    --cor-borda: #e2e8f0;
+    --cor-input: #ffffff;
+    --cor-input-borda: #d1d5db;
+
+    /* Texto */
+    --texto-principal: #1f2937;
+    --texto-secundario: #6b7280;
+    --texto-placeholder: #9ca3af;
+    --texto-label: #374151;
+
+    /* Ações */
+    --cor-primaria: #1a1aaf;
+    --cor-primaria-hover: #1a4195;
+    --cor-secondary: #2c2ebf;
+    --cor-secondary-hover: #03389a;
+    --cor-sucesso: #198754;
+    --cor-sucesso-hover: #1b553a;
+    --cor-perigo: #dc3545;
+    --cor-perigo-hover: #dc2626;
+    --cor-link: #0ea5e9;
+
+    /* Sombras */
+    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sombra-form: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f9;
@@ -41,17 +104,27 @@ textarea {
     border-radius: 6px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background: #2ecc71;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
+.sem-tarefas-container {
+    text-align: center;
+    margin-top: 50px;
 }
 
-button:hover {
-    background: #27ae60;
+.sem-tarefas {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.botao-nova-tarefa {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.botao-nova-tarefa:hover {
+    background-color: var(--cor-primaria-hover);
 }
