@@ -71,6 +71,13 @@ header {
     transition: all 0.3s ease;
 }
 
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+}
+
 .navbar {
     padding: 1rem 0;
     width: 100%;
