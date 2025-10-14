@@ -102,7 +102,7 @@ h1 {
 
 h2 {
     color: var(--texto-principal);
-    margin-bottom: 20px;
+
 }
 
 form label {
@@ -115,7 +115,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid var(--cor-input-borda);
@@ -193,8 +193,12 @@ form button:hover {
     padding: 8px;
 }
 
+.menu-navegacao {
+    padding-top: 2rem;
+}
 
 .menu-navegacao ul {
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -205,12 +209,14 @@ form button:hover {
 }
 
 .menu-navegacao a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: all .3s ease;
     color: var(--texto-secundario);
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    border-radius: 6px;
-    transition: all 0.3s ease;
 }
 
 .menu-navegacao a:hover,
@@ -226,6 +232,7 @@ form button:hover {
     background-color: var(--cor-fundo);
     transition: background-color 0.3s ease;
     justify-content: space-between;
+    padding-top: 7rem;
     /* mantém o footer no fim */
 }
 
@@ -726,97 +733,34 @@ p a:hover {
     color: var(--cor-link);
 }
 
-
-/* Responsividade do Dashboard com Media Query para telas médias (Tablets)  */
-@media (max-width: 768px) {
-    .dashboard-container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 15px;
-        border-right: none;
-        border-bottom: 1px solid var(--cor-borda);
-    }
-
-    .menu-navegacao ul {
-        display: flex;
-        overflow-x: auto;
-        gap: 10px;
-    }
-
-    .menu-navegacao li {
-        margin-bottom: 0;
-        white-space: nowrap;
-    }
-
-    .cabecalho-dashboard {
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-    }
-
-    .grade-tarefas {
-        grid-template-columns: 1fr;
-    }
-
-    .acoes-formulario {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .acoes-detalhes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .botao-salvar,
-    .botao-salvar-alteracoes,
-    .botao-salvar-tarefa {
-        width: 100%;
-    }
-
-    .botao-cancelar,
-    .botao-editar-tarefa {
-        width: 100%;
-    }
-
-    .botao-excluir-tarefa {
-        width: 100%;
-    }
+/* Botão do menu (hamburger) */
+.menu-toggle {
+    display: none;
+    /* só aparece no mobile */
+    z-index: 1001;
+    background: var(--cor-neon, #00ffff);
+    border: none;
+    color: #000;
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/*Responsividade com Media Query para tela menores (Celular)*/
-
-@media (max-width: 500px) {
-    .conteudo-principal {
-        padding: 15px;
-    }
-
-    .botao-cancelar,
-    .botao-editar-tarefa {
-        width: 93%;
-    }
-
-    .menu-navegacao ul {
-        display: grid;
-        grid-template-columns: auto auto;
-        overflow-x: auto;
-        gap: 10px;
-    }
-
-    .cartao-tarefa,
-    .cartao-detalhes,
-    .formulario-tarefa {
-        padding: 20px;
-    }
+.menu-toggle:hover {
+    background: #0ff;
+    transform: scale(1.05);
 }
 
-/*Animação do incone do painel*/
-.sidebar h1 i {
-    color: rgb(187, 11, 11);
+/* Sidebar padrão */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: var(--cor-sidebar);
+    transition: transform 0.3s ease;
 }
+
 
 
 /*skip Link*/
