@@ -166,7 +166,7 @@
 
     .botao-cancelar,
     .botao-editar-tarefa {
-        width: 93%;
+        width: 100%;
     }
 
     .menu-navegacao ul {
@@ -237,7 +237,7 @@
 .cartao-tarefa {
     background: var(--cor-fundo);
     border-radius: 12px;
-    padding: 1rem;
+    padding: 2rem;
     width: 100%;
     max-width: 480px;
     box-shadow: 0 0 15px var(--sombra-cartao);

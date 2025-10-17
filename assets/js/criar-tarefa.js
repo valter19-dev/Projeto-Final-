@@ -2,7 +2,21 @@
 // Este script valida o formulário e salva a tarefa no LocalStorage
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Note: Mudei para 'form-tarefa' para seguir o padrão do seu código inicial,
+  // mas mantenho o 'formTarefa' se for o ID que está no seu HTML.
   const form = document.getElementById("formTarefa");
+  // const form = document.getElementById("form-tarefa"); // Se o ID for este.
+
+  // Elemento para notificação (se houver no formulário de criação)
+  // const notificacao = document.getElementById('notificacao-criacao'); // Exemplo
+
+  // Função para mostrar notificações (poderia ser usada aqui, mas você usa alert)
+  function mostrarNotificacao(mensagem, tipo = "sucesso") {
+    // Se você tiver um elemento de notificação nesta página (criar-tarefa.html)
+    // você implementaria a função 'mostrarNotificacao' aqui.
+    // Por enquanto, vou manter o 'alert' para a validação.
+    alert(mensagem);
+  }
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // impede o recarregamento da página
@@ -13,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // === Validação básica ===
     if (titulo === "" || descricao === "") {
+      // Em vez de 'alert', usamos a notificação, se o elemento existir
+      // mostrarNotificacao("Por favor, preencha o título e a descrição da tarefa.", 'erro');
       alert("Por favor, preencha o título e a descrição da tarefa.");
       return;
     }
@@ -22,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
       id: Date.now(), // gera um ID único
       titulo: titulo,
       descricao: descricao,
+      // Status inicial é Pendente (corresponde a 'concluida: false')
       status: "Pendente",
+      concluida: false, // Adicionamos 'concluida' para facilitar a lógica de alternar
     };
 
     // === Recupera as tarefas existentes ===
@@ -34,13 +52,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // === Salva novamente no LocalStorage ===
     localStorage.setItem("tarefas", JSON.stringify(tarefasSalvas));
 
-    // Mensagem e redirecionamento
-    alert("✅ Tarefa criada com sucesso!");
+    // ********** NOTIFICAÇÃO PARA O DASHBOARD **********
+    localStorage.setItem(
+      "notificacao_dashboard",
+      "Tarefa adicionada com sucesso!"
+    );
+    localStorage.setItem("notificacao_tipo", "sucesso");
+
+    // Redirecionamento
     window.location.href = "./dashboard.html";
   });
 });
 
-// === Menu Responsivo ===
+// === Menu Responsivo (mantido) ===
 const menuToggle = document.getElementById("menuToggle");
 const sidebar = document.querySelector(".sidebar");
 
