@@ -900,16 +900,59 @@ p a:hover {
     /* Visível */
     visibility: visible;
     /* Interativo */
+    /* * Transição para o estado 'ativo' 
+     * Isso garante que a entrada 'slideIn' aconteça
+     */
+    transform: translateY(0);
+    /* Volta para a posição original (top: 20px) */
+
+    /* Aplica a animação de entrada */
+    animation: slideIn 0.5s forwards;
+
+    /* Reabilita cliques (se precisar) */
+    pointer-events: auto;
+}
+
+.notificacao.saindo {
+    animation: slideOut 0.5s forwards;
+    /* Roda a animação de saída */
 }
 
 .notificacao.sucesso {
-    background-color: #27ae60;
+    background-color: var(--cor-primaria);
     opacity: 1;
     transform: translateX(0);
+
 }
 
 .notificacao.erro {
     background-color: #e74c3c;
     opacity: 1;
     transform: translateX(0);
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+        /* Começa acima */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Termina na posição de visualização */
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
 }

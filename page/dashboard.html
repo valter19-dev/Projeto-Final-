@@ -29,12 +29,14 @@
                 </div>
 
                 <div class="nav-actions">
-                    <button id="themeToggle" class="theme-toggle">
+
+                    <!--Bota de tema pausado no momento-->
+                    <!-- <button id="themeToggle" class="theme-toggle">
                         <span class="icon">🌙</span>
-                    </button>
+                    </button> -->
 
                     <div class="header-user">
-                        <span>Usuário</span>
+                        <span id="nome-usuario-dashboard">Usuário</span>
                         <div class="user-avatar">
                             <i class="fas fa-user-circle"></i>
                         </div>
@@ -89,13 +91,16 @@
             </nav>
         </aside>
 
+
         <main class="conteudo-principal" id="conteudo-principal">
+            <!-- Área de notificações -->
+            <div id="notificacao-dashboard" class="notificacao"></div>
+
             <div class="grade-tarefas">
 
                 <div id="listaTarefas" class="tarefas-container"></div>
 
-                <!-- Área de notificações -->
-                <div id="notificacao-dashboard" class="notificacao-inicial"></div>
+
 
 
                 <!-- <div class="cartao-tarefa">
