@@ -74,6 +74,37 @@ document.addEventListener("DOMContentLoaded", () => {
   carregarTarefas();
 });
 
+// === dashboard.js (Novo Arquivo) ===
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Pega os dados de notificação do localStorage
+  const mensagem = localStorage.getItem("notificacao_dashboard");
+  const tipo = localStorage.getItem("notificacao_tipo"); // 'sucesso', 'erro', etc.
+
+  const elementoNotificacao = document.getElementById("notificacao-dashboard");
+
+  // 2. Verifica se há uma mensagem para exibir e se o elemento existe
+  if (mensagem && elementoNotificacao) {
+    // Exibe a notificação
+    elementoNotificacao.textContent = mensagem;
+    // 1. ANIMAÇÃO DE ENTRADA: Adiciona as classes para exibir e estilizar.
+    // O navegador aplicará a transição de opacity: 0 para 1.
+    elementoNotificacao.className = `notificacao ${tipo} ativo`;
+
+    // 3. Remove a notificação (e os dados do localStorage) após 3 segundos
+    setTimeout(() => {
+      elementoNotificacao.className = "notificacao-inicial"; // Ou apenas remove as classes de estilo
+
+      // 4. Limpa o localStorage para que a notificação não apareça em um recarregamento futuro
+      localStorage.removeItem("notificacao_dashboard");
+      localStorage.removeItem("notificacao_tipo");
+    }, 3000);
+  }
+
+  // ********** O RESTO DO CÓDIGO DO SEU DASHBOARD VAI AQUI **********
+  // Ex: função para carregar as tarefas, menu, etc.
+});
+
 // === Menu Responsivo ===
 const menuToggle = document.getElementById("menuToggle");
 const sidebar = document.querySelector(".sidebar");

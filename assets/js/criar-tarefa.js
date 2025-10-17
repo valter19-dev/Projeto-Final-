@@ -34,9 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // === Salva novamente no LocalStorage ===
     localStorage.setItem("tarefas", JSON.stringify(tarefasSalvas));
 
-    // Mensagem e redirecionamento
-    alert("✅ Tarefa criada com sucesso!");
-    window.location.href = "./dashboard.html";
+    // ********** MUDANÇA PRINCIPAL AQUI **********
+    // Salva a mensagem de notificação no localStorage
+    localStorage.setItem(
+      "notificacao_dashboard",
+      "Tarefa adicionada com sucesso!"
+    );
+    localStorage.setItem("notificacao_tipo", "sucesso"); // Opcional: para definir o estilo (cor verde, etc.)
+
+    // Redirecionamento
+    window.location.href = "./dashboard.html"; // O redirecionamento acontece.
   });
 });
 
