@@ -100,6 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  //funciona
+
   // 🗑️ Excluir tarefa (equivalente ao 'removerTarefa' do código inicial)
   window.excluirTarefa = function (id) {
     if (confirm("Tem certeza que deseja excluir esta tarefa?")) {
