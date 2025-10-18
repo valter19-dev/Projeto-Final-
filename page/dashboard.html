@@ -24,8 +24,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <i class="bi bi-speedometer2"></i>
-                    <span>TaskFlow</span>
+                    <span class="logo-text">Dash</span>Pro+
                 </div>
 
                 <div class="nav-actions">
@@ -36,10 +35,10 @@
                     </button> -->
 
                     <div class="header-user">
-                        <span id="nome-usuario-dashboard">Usuário</span>
                         <div class="user-avatar">
                             <i class="fas fa-user-circle"></i>
                         </div>
+                        <span id="nome-usuario-dashboard">Usuário</span>
                     </div>
                     <!-- Botão de menu (só aparece no mobile) -->
                     <button class="menu-toggle" id="menuToggle">
@@ -58,8 +57,7 @@
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="logo">
-                <i class="bi bi-speedometer2"></i>
-                <span>TaskFlow</span>
+                <span class="logo-text">Dash</span>Pro+
             </div>
             <nav class="menu-navegacao">
 
@@ -75,7 +73,7 @@
                             <h3>Nova Tarefa</h3>
                         </a></li>
 
-                    <li><a href="../page/criar-tarefa.html">
+                    <li><a href="#">
                             <span class="icones"><i class="bi bi-gear-fill"></i></span>
 
                             <h3>Configurações</h3>
@@ -93,6 +91,10 @@
 
 
         <main class="conteudo-principal" id="conteudo-principal">
+            <div class="cabecalho-dashboard">
+                <h2>Detalhes da Tarefa</h2>
+                <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova tarefa</a>
+            </div>
             <!-- Área de notificações -->
             <div id="notificacao-dashboard" class="notificacao"></div>
 

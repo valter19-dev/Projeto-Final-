@@ -73,9 +73,16 @@ header {
 
 .header-user {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 1rem;
-    font-weight: 500;
+    background: var(--cor-borda);
+    padding: 12px;
+    border-radius: 30px;
+    line-height: 1rem;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .navbar {
@@ -96,6 +103,7 @@ header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    line-height: 2rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--texto-principal);
@@ -104,6 +112,10 @@ header {
 .logo i {
     color: var(--cor-primaria);
     font-size: 1.8rem;
+}
+
+.logo-text {
+    color: #03e5b8;
 }
 
 .nav-actions {
@@ -131,19 +143,23 @@ header {
     transform: scale(1.05);
 }
 
-.btn-login {
-    background-color: transparent;
-    color: var(--texto-secundario);
+#btn-login {
+    background-color: var(--texto-principal);
+    color: var(--cor-fundo);
     border: 1px solid var(--cor-borda);
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    width: 155px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn-login:hover {
+#btn-login:hover {
     color: var(--cor-primaria);
     border-color: var(--cor-primaria);
+    transform: translateY(-2px);
 }
 
 /* Conteúdo Principal */
@@ -180,15 +196,16 @@ header {
     flex-wrap: wrap;
 }
 
-.btn-primary,
-.btn-secondary {
+.btn-primary {
     padding: 12px 24px;
     border-radius: 8px;
     font-size: 1rem;
+    font-weight: bold;
+    width: 155px;
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .btn-primary {
@@ -205,11 +222,6 @@ header {
     background-color: transparent;
     color: var(--texto-secundario);
     border: 2px solid var(--cor-borda);
-}
-
-.btn-secondary:hover {
-    border-color: var(--cor-primaria);
-    color: var(--cor-primaria);
 }
 
 /* Preview Section */
@@ -396,9 +408,9 @@ header {
         align-items: center;
     }
 
-    .btn-primary,
-    .btn-secondary {
-        width: 200px;
+
+    .btn-primary {
+        width: 50%;
     }
 
     .mockup-content {

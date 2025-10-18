@@ -1,21 +1,44 @@
-// === login.js ===
+// === login.js (CORRIGIDO) ===
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Elementos do DOM
-  const formLogin = document.getElementById("form-login"); // NOVO: Captura o formulário
+  const formLogin = document.getElementById("form-login");
   const emailInput = document.getElementById("email-login");
   const senhaInput = document.getElementById("senha-login");
   const erroEmail = document.getElementById("erro-email");
 
+  // ----------------------------------------------------
+  // VARIÁVEIS E FUNÇÃO DE NOTIFICAÇÃO
+  // ----------------------------------------------------
+  const elementoNotificacao = document.getElementById("notificacao");
+
+  function mostrarNotificacao(mensagem, tipo = "sucesso") {
+    if (!elementoNotificacao) return;
+
+    // Limpa a classe 'saindo' para que a animação de entrada funcione imediatamente
+    elementoNotificacao.classList.remove("saindo");
+
+    elementoNotificacao.textContent = mensagem;
+    elementoNotificacao.className = `notificacao ${tipo} ativo`;
+
+    setTimeout(() => {
+      elementoNotificacao.classList.remove("ativo");
+      elementoNotificacao.classList.add("saindo");
+
+      setTimeout(() => {
+        elementoNotificacao.className = "notificacao";
+      }, 500);
+    }, 3000);
+  }
+
   // ==========================================================
-  // FUNÇÃO DE VALIDAÇÃO REUTILIZÁVEL
+  // FUNÇÃO DE VALIDAÇÃO REUTILIZÁVEL (Mantida sua lógica)
   // ==========================================================
-  // Esta função será usada tanto no 'input' quanto no 'submit'.
   function validarCampos() {
     let formValido = true;
+    const emailValor = emailInput.value.trim();
 
     // Validação de Email
-    const emailValor = emailInput.value.trim();
     if (
       emailValor === "" ||
       !emailValor.includes("@") ||
@@ -32,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Validação de Senha
     if (senhaInput.value.length < 6) {
       senhaInput.classList.add("invalido");
-      // Se você tivesse um span para erro de senha, colocaria a mensagem aqui
       formValido = false;
     } else {
       senhaInput.classList.remove("invalido");
@@ -42,73 +64,82 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================
-  // EVENTOS DE VALIDAÇÃO EM TEMPO REAL (Seu código original)
+  // EVENTOS DE VALIDAÇÃO EM TEMPO REAL
   // ==========================================================
-  // Mantemos os ouvintes de 'input' para feedback visual imediato.
   emailInput.addEventListener("input", validarCampos);
   senhaInput.addEventListener("input", validarCampos);
 
   // ==========================================================
   // EVENTO PRINCIPAL: SUBMISSÃO DO FORMULÁRIO (Login/Sessão)
   // ==========================================================
-  formLogin.addEventListener("submit", (e) => {
-    e.preventDefault(); // Impede o envio padrão
+  if (formLogin) {
+    formLogin.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    // 1. Revalida todos os campos antes de prosseguir
-    if (!validarCampos()) {
-      // Se a validação falhar, para a execução e as classes 'invalido' já estão ativas
-      alert("Por favor, corrija os erros no formulário antes de continuar.");
-      return;
-    }
-
-    // --- SIMULAÇÃO DE LOGIN BEM-SUCEDIDO ---
-    // Aqui você faria a checagem no banco de dados ou API.
-    const email = emailInput.value.trim();
-
-    // 2. Extrai o nome do usuário a partir do e-mail
-    // Ex: "joao.silva@exemplo.com" -> "Joao"
-    // PELA VERSÃO CORRIGIDA E MAIS CLARA:
-    // 1. Extrai a parte inicial do email (antes do @)
-    let parteInicialEmail = email.split("@")[0]; // Ex: "valterrodrygues90" ou "ana.silva"
-
-    // 2. Define os possíveis separadores de nome de usuário
-    const separadores = [".", "_", "-"];
-
-    // 3. Itera pelos separadores para encontrar a primeira ocorrência
-    let primeiroNome = parteInicialEmail;
-
-    for (const separador of separadores) {
-      // Verifica se o separador existe na string
-      if (parteInicialEmail.includes(separador)) {
-        // Se encontrar, pega apenas o que está antes do separador
-        primeiroNome = parteInicialEmail.split(separador)[0];
-        break; // Interrompe o loop assim que encontrar o primeiro separador
+      // 1. Revalida todos os campos antes de prosseguir
+      if (!validarCampos()) {
+        // Notificação de erro de validação (campos vazios/inválidos)
+        mostrarNotificacao("Por favor, corrija os campos inválidos.", "erro");
+        return;
       }
-    }
 
-    // Opcional: Remove números se eles estiverem no final do nome (ex: valter90)
-    // Regex: Checa se termina com um ou mais dígitos (\d+) e remove
-    primeiroNome = primeiroNome.replace(/\d+$/, "");
+      // 2. Extrai as credenciais digitadas
+      const emailDigitado = emailInput.value.trim();
+      const senhaDigitada = senhaInput.value;
 
-    // 4. Formata e Capitaliza
-    if (primeiroNome) {
-      nomeUsuario =
-        primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1);
-    } else {
-      nomeUsuario = "Usuário";
-    }
+      // 3. RECUPERA E BUSCA O USUÁRIO
+      const usuariosSalvosString = localStorage.getItem("usuarios");
+      const listaUsuarios = usuariosSalvosString
+        ? JSON.parse(usuariosSalvosString)
+        : [];
 
-    // 5. SALVA O NOME NO LOCALSTORAGE
-    localStorage.setItem("nome_usuario_logado", nomeUsuario);
+      const usuarioEncontrado = listaUsuarios.find(
+        (user) => user.email === emailDigitado && user.senha === senhaDigitada
+      );
 
-    // 4. Configura a notificação de boas-vindas para o dashboard
-    localStorage.setItem(
-      "notificacao_dashboard",
-      `Bem-vindo(a) de volta, ${nomeUsuario}!`
-    );
-    localStorage.setItem("notificacao_tipo", "sucesso");
+      // 4. LÓGICA DE AUTENTICAÇÃO
+      if (usuarioEncontrado) {
+        // LOGIN BEM-SUCEDIDO!
 
-    // 5. Redireciona para o dashboard
-    window.location.href = "./dashboard.html";
-  });
+        // --- Lógica de extração de nome (Mantida sua lógica aprimorada) ---
+        let parteInicialEmail = emailDigitado.split("@")[0];
+        const separadores = [".", "_", "-"];
+        let primeiroNome = parteInicialEmail;
+
+        for (const separador of separadores) {
+          if (parteInicialEmail.includes(separador)) {
+            primeiroNome = parteInicialEmail.split(separador)[0];
+            break;
+          }
+        }
+
+        primeiroNome = primeiroNome.replace(/\d+$/, "");
+
+        // Usa o nome extraído ou o nome salvo no cadastro (melhor opção)
+        const nomeParaDashboard = usuarioEncontrado.nome || primeiroNome;
+
+        // 5. CRIA A SESSÃO e Redireciona
+        localStorage.setItem("nome_usuario_logado", nomeParaDashboard);
+        localStorage.setItem(
+          "notificacao_dashboard",
+          `Bem-vindo(a) de volta, ${nomeParaDashboard}!`
+        );
+        localStorage.setItem("notificacao_tipo", "sucesso");
+
+        window.location.href = "./dashboard.html";
+      } else {
+        // LOGIN FALHOU!
+        // Notificação de credenciais incorretas
+        mostrarNotificacao(
+          "Email ou senha incorretos. Verifique suas credenciais.",
+          "erro"
+        );
+      }
+
+      // **IMPORTANTE**: Nada de código deve vir aqui, pois ele rodará
+      // após o 'if'/'else' e pode causar redirecionamento indesejado.
+    });
+  } else {
+    console.error("Elemento 'form-login' não encontrado.");
+  }
 });

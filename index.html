@@ -25,7 +25,7 @@
                     <button id="themeToggle" class="theme-toggle">
                         <span class="icon">🌙</span>
                     </button>
-                    <button class="btn-login">Entrar</button>
+
                 </div>
             </div>
         </nav>
@@ -40,7 +40,8 @@
                 <p>Organize suas tarefas de forma simples e eficiente</p>
                 <div class="hero-actions">
                     <button id="btnDashboard" class=" btn-primary">Criar Conta</button>
-                    <button class="btn-secondary">...</button>
+                    <button id="btn-login">Entrar</button>
+                    <!-- <button class="btn-secondary">...</button> -->
                 </div>
             </section>
 
@@ -78,17 +79,16 @@
                     </div>
                 </div>
             </section>
-            <footer class="footer">
-                <div class="container">
-                    <p>&copy; 2025 Projeto Gerenciamento de Tarefas. Todos os direitos reservados.</p>
-                </div>
-            </footer>
             <script>
                 <!-- JavaScript -->
 
                 const btnDashboard = document.getElementById("btnDashboard");
                 btnDashboard.addEventListener("click", () => {
                     window.location.href = "./page/cadastro.html";
+                })
+                const btnEntrar = document.getElementById("btn-login");
+                btnEntrar.addEventListener("click", () => {
+                    window.location.href = "./page/login.html";
                 });
 
             </script>
