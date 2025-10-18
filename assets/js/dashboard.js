@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
         listaTarefas.innerHTML = `
                 <div class="sem-tarefas-container" id="mensagem-vazia-dashboard">
                     <p class="sem-tarefas">Nenhuma tarefa cadastrada ainda.</p>
-                    <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova Tarefa</a>
                 </div>
                 `;
       } else {
@@ -138,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
         listaTarefas.innerHTML = `
                 <div class="sem-tarefas-container">
                     <p class="sem-tarefas">Nenhuma tarefa cadastrada ainda. Adicione uma tarefa!</p>
-                    <a href="./criar-tarefa.html" class="botao-nova-tarefa">Nova Tarefa</a>
+            
                 </div>
             `;
       }
