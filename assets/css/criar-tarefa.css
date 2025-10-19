@@ -29,6 +29,21 @@
     /* Sombras */
     --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.3);
     --sombra-form: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    /*Cores SideBar*/
+
+    --color-primary: #7380ec;
+    --color-danger: #AD000E;
+    --color-sucess: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1ebs;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-backgroud: #f6f6f9;
 }
 
 /* Tema Claro */
