@@ -18,6 +18,21 @@
 
     /* Sombras */
     --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    /*Cores SideBar*/
+
+    --color-primary: #7380ec;
+    --color-danger: #AD000E;
+    --color-sucess: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1ebs;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-backgroud: #f6f6f9;
 }
 
 /* Tema Claro */
@@ -98,7 +113,6 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: var(--cor-borda);
     padding: 12px;
     border-radius: 30px;
     line-height: 1rem;
@@ -106,6 +120,12 @@ header {
     gap: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.user-avatar {
+    font-size: 2rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-dark-variant);
 }
 
 .navbar {
@@ -138,7 +158,7 @@ header {
 }
 
 .logo-text {
-    color: #03e5b8;
+    color: var(--color-primary);
 }
 
 .nav-actions {
