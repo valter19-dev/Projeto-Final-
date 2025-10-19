@@ -10,6 +10,7 @@
 
     /* Texto */
     --texto-principal: #f5f5f5;
+    --texto-notificacao: #000000;
     --texto-secundario: #9ca3af;
     --texto-placeholder: #dad3d3;
     --texto-label: #efe3e3;
@@ -26,38 +27,48 @@
     --cor-link: #0ea5e9;
 
     /* Sombras */
-    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.589);
     --sombra-form: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Tema Claro */
 [data-theme="light"] {
-    --cor-fundo: #f8fafc;
+    --cor-fundo: #f0f2f4;
+    ;
+    /* Fundo geral, levemente azulado e suave */
     --cor-sidebar: #ffffff;
+    /* Fundo da sidebar */
     --cor-cartao: #ffffff;
-    --cor-borda: #e2e8f0;
+    /* Fundo dos cards */
+    --cor-borda: #e2dbdb;
+    /* Borda suave */
     --cor-input: #ffffff;
-    --cor-input-borda: #d1d5db;
+    --cor-input-borda: #d0d7e2;
 
-    /* Texto */
-    --texto-principal: #1f2937;
-    --texto-secundario: #6b7280;
-    --texto-placeholder: #9ca3af;
-    --texto-label: #374151;
+    --texto-principal: #1e293b;
+    --texto-notificacao: #000000;
+    /* Azul escuro, confortável pra leitura */
+    --texto-secundario: #64748b;
+    /* Cinza-azulado, bom contraste */
+    --texto-label: #475569;
+    --texto-placeholder: #94a3b8;
 
-    /* Ações */
-    --cor-primaria: #1a1aaf;
-    --cor-primaria-hover: #1a4195;
-    --cor-secondary: #2c2ebf;
-    --cor-secondary-hover: #03389a;
-    --cor-sucesso: #198754;
-    --cor-sucesso-hover: #1b553a;
-    --cor-perigo: #dc3545;
-    --cor-perigo-hover: #dc2626;
-    --cor-link: #0ea5e9;
+    --cor-primaria: #2563eb;
+    /* Azul principal (botões, links) */
+    --cor-primaria-hover: #1d4ed8;
+    /* Azul um pouco mais escuro no hover */
+    --cor-secondary: #3b82f6;
+    /* Azul secundário */
+    --cor-secondary-hover: #2563eb;
 
-    /* Sombras */
-    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --cor-sucesso: #16a34a;
+    /* Verde suave (para concluído) */
+    --cor-sucesso-hover: #15803d;
+    --cor-perigo: #dc2626;
+    /* Vermelho para excluir */
+    --cor-perigo-hover: #b91c1c;
+
+    --sombra-cartao: 0 2px 4px hsla(0, 0%, 0%, 0.76);
     --sombra-form: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -92,11 +103,11 @@ h1 {
 
 .form-container {
     background-color: var(--cor-cartao);
-    padding: 30px;
+    padding: 10px 20px;
     border-radius: 8px;
     box-shadow: var(--sombra-form);
     width: 98%;
-    max-width: 400px;
+    max-width: 800px;
     margin: 0 auto;
     box-sizing: border-box;
     border: 1px solid var(--cor-borda);
@@ -305,7 +316,7 @@ form input.invalido::placeholder {
 
 .menu-navegacao a:hover,
 .menu-navegacao a.ativo {
-    background-color: rgba(112, 178, 187, 0.923);
+    background-color: var(--cor-primaria);
     color: var(--texto-principal);
     font-size: 1.1rem;
 }
@@ -321,6 +332,8 @@ form input.invalido::placeholder {
     transition: background-color 0.3s ease;
     justify-content: space-between;
     padding-top: 7rem;
+    width: 100%;
+    overflow-y: auto;
     /* mantém o footer no fim */
 }
 
@@ -328,8 +341,10 @@ form input.invalido::placeholder {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    font-size: small;
     background-color: var(--cor-cartao);
     padding: 10px;
+    border: 1px solid var(--cor-borda);
     border-radius: 10px;
     flex-direction: row;
     align-items: center;
@@ -433,7 +448,7 @@ form input.invalido::placeholder {
 .botao-editar-tarefa {
     display: inline-block;
     width: 31vh;
-    background-color: var(--cor-secondary);
+    background-color: var(--cor-primaria);
     color: white;
     padding: 10px;
     border: none;
@@ -447,7 +462,7 @@ form input.invalido::placeholder {
 }
 
 .botao-editar-tarefa:hover {
-    background-color: var(--cor-secondary-hover);
+    background-color: var(--cor-primaria-hover);
 }
 
 .botao-excluir-tarefa {
@@ -583,19 +598,73 @@ p a:hover {
     /* herda o comportamento do grid da .grade-tarefas */
 }
 
-.cartao-tarefa {
-    padding: 20px;
-    border-radius: 8px;
+/* =============================
+   🎴 ESTILO DOS CARDS DE TAREFAS
+============================= */
+
+.tarefas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-    transition: all 0.3s ease;
+}
+
+.cartao-tarefa {
+    background: var(--cor-cartao);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    border: 2px solid var(--cor-borda);
+    color: var(--texto-principal);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cartao-tarefa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.108);
+}
+
+.cabecalho-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.acoes-tarefa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.acoes-tarefa a,
+.acoes-tarefa button {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.botao-editar {
+    background-color: var(--cor-primaria);
+}
+
+.botao-concluir {
+    background-color: var(--cor-sucesso);
+}
+
+.botao-excluir {
+    background-color: var(--cor-perigo);
 }
 
 
-.cartao-tarefa,
+
 .cartao-detalhes,
 .formulario-tarefa {
     width: 100%;
@@ -603,7 +672,6 @@ p a:hover {
     /* 3. Garante que os paddings e borders sejam incluídos na largura total */
     box-sizing: border-box;
     margin-bottom: 20px;
-    background-color: red;
     border: 2px solid var(--cor-borda);
 }
 
@@ -661,14 +729,6 @@ p a:hover {
 .acoes-tarefa {
     display: flex;
     gap: 10px;
-}
-
-.rodape-dashboard {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid var(--cor-borda);
-    color: var(--texto-secundario);
-    text-align: center;
 }
 
 /* Estilos para Detalhes da Tarefa - página === DETALHES-TAREFA === */
@@ -889,7 +949,8 @@ p a:hover {
     right: 20px;
     padding: 15px 20px;
     border-radius: 8px;
-    color: white;
+    font-size: bold;
+    color: var(--texto-notificacao);
     font-weight: 500;
     opacity: 0;
     transform: translateX(50%);
@@ -913,6 +974,7 @@ p a:hover {
     opacity: 1;
     /* Visível */
     visibility: visible;
+
     /* Interativo */
     /* * Transição para o estado 'ativo' 
      * Isso garante que a entrada 'slideIn' aconteça
@@ -933,8 +995,8 @@ p a:hover {
 }
 
 .notificacao.sucesso {
-    background-color: #358b95fe;
-    border-left: 5px solid var(--cor-primaria);
+    background-color: #43e782;
+    border-left: 7px solid var(--cor-sucesso);
     opacity: 1;
     transform: translateX(0);
 
