@@ -8,6 +8,7 @@
 
     /* Texto */
     --texto-principal: #f5f5f5;
+    --texto-notificacao: #000000;
     --texto-secundario: #9ca3af;
 
     /* Ações */
@@ -21,20 +22,42 @@
 
 /* Tema Claro */
 [data-theme="light"] {
-    --cor-fundo: #f8fafc;
+    --cor-fundo: #f0f2f4;
+    ;
+    /* Fundo geral, levemente azulado e suave */
     --cor-sidebar: #ffffff;
+    /* Fundo da sidebar */
     --cor-cartao: #ffffff;
-    --cor-borda: #e2e8f0;
+    /* Fundo dos cards */
+    --cor-borda: #e2dbdb;
+    /* Borda suave */
     --cor-input: #ffffff;
+    --cor-input-borda: #d0d7e2;
 
-    --texto-principal: #1f2937;
-    --texto-secundario: #6b7280;
+    --texto-principal: #1e293b;
+    --texto-notificacao: #000000;
+    /* Azul escuro, confortável pra leitura */
+    --texto-secundario: #64748b;
+    /* Cinza-azulado, bom contraste */
+    --texto-label: #475569;
+    --texto-placeholder: #94a3b8;
 
-    --cor-primaria: #1a1aaf;
-    --cor-primaria-hover: #1a4195;
-    --cor-secondary: #2c2ebf;
+    --cor-primaria: #2563eb;
+    /* Azul principal (botões, links) */
+    --cor-primaria-hover: #1d4ed8;
+    /* Azul um pouco mais escuro no hover */
+    --cor-secondary: #3b82f6;
+    /* Azul secundário */
+    --cor-secondary-hover: #2563eb;
 
-    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --cor-sucesso: #16a34a;
+    /* Verde suave (para concluído) */
+    --cor-sucesso-hover: #15803d;
+    --cor-perigo: #dc2626;
+    /* Vermelho para excluir */
+    --cor-perigo-hover: #b91c1c;
+
+    --sombra-cartao: 0 2px 4px rgba(0, 0, 0, 0.742);
 }
 
 /* Reset */
@@ -157,7 +180,7 @@ header {
 }
 
 #btn-login:hover {
-    color: var(--cor-primaria);
+    color: var(--cor-fundo);
     border-color: var(--cor-primaria);
     transform: translateY(-2px);
 }
@@ -410,7 +433,7 @@ header {
 
 
     .btn-primary {
-        width: 50%;
+        width: 156px;
     }
 
     .mockup-content {
